@@ -17,6 +17,7 @@ The car uses a dual-controller architecture to handle communication and physical
 ---
 
 ## 🛠️ Hardware Stack
+`Please note:` you can choose any model for the motors and the battery
 
 | Component | Purpose |
 | :--- | :--- |
@@ -25,28 +26,29 @@ The car uses a dual-controller architecture to handle communication and physical
 | **DC Motors** | Drive system for the wheels |
 | **Breadboard** | Prototyping and signal routing |
 | **Smartphone** | Remote control interface |
+| **6V Battery** | Powers up the whole car system |
 
 ---
 
 ## 📂 Repository Contents
 
-* **`/Arduino_Motor_Control`**: Contains the `.ino` sketch for the Arduino Uno to handle DC motor logic.
-* **`/XIAO_ESP32_BLE`**: Contains the code for the XIAO module to enable Bluetooth discoverability.
-* **`/Diagrams`**: Wiring schematics and pinout maps for the breadboard connections.
+* **`/arduino_rccar`**: Contains the `.ino` sketch for the Arduino Uno to handle DC motor logic.
+* **`/xiao_esp_rccar`**: Contains the code for the XIAO module to enable Bluetooth discoverability.
+* **`/diagrams`**: Wiring schematics and pinout map for the breadboard connections.
 
 ---
 
 ## 🚀 How to Use
 
 ### 1. Hardware Setup
-Connect the XIAO ESP32 to the Arduino Uno. Ensure the **TX/RX** pins are correctly cross-connected (if using Serial) and that both boards share a **Common Ground (GND)**.
+Connect the XIAO ESP32 to the Arduino Uno. Ensure that both boards share a **Common Ground (GND)** on the breadboard as only one battery would power up the whole car.
 
 ### 2. Software Installation
-1.  Upload the `XIAO_ESP32_BLE` code to your XIAO module using the Arduino IDE.
-2.  Upload the `Arduino_Motor_Control` code to your Uno.
+1.  Upload the `xiao_esp_rccar` code to your XIAO module using the Arduino IDE.
+2.  Upload the `arduino_rccar` code to your Uno.
 
 ### 3. Remote Control Interface
-We use the **LightBlue** app (available on iOS and Android) to send commands:
+For this example, we use the **LightBlue** app (available on iOS and Android) to send commands:
 1.  Power on the car.
 2.  Open **LightBlue** and look for the XIAO device in the scanning list.
 3.  Connect to the device and select the appropriate command characteristic.
@@ -56,5 +58,5 @@ We use the **LightBlue** app (available on iOS and Android) to send commands:
 
 ## 🔧 Future Roadmap
 * Integrate an Ultrasonic sensor for "Auto-Avoidance" mode.
-* Develop a custom Flutter/React Native app for a more intuitive UI.
-* Migrate from a breadboard to a custom soldered PCB.
+* Develop a custom Flutter/React Native app for a more intuitive UI and joystick controls.
+* Migrate from a breadboard to a custom soldered PCB for more polished appearance.
