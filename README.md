@@ -27,6 +27,7 @@ The car uses a dual-controller architecture to handle communication and physical
 | **Breadboard** | Prototyping and signal routing |
 | **Smartphone** | Remote control interface |
 | **6V Battery** | Powers up the whole car system |
+| **LCD Screen** | Displays the commands received by the system |
 
 ---
 
